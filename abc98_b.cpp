@@ -55,7 +55,7 @@ int main()
             }
             for (int k = i; k < n; k++)
             {
-                if (s[i] == c)
+                if (s[k] == c)
                 {
                     right = true;
                 }
