@@ -36,4 +36,16 @@ int main()
 {
     int a, b, c, k;
     cin >> a >> b >> c >> k;
+    vector<int> m = {a, b, c};
+    for (int i = 0; i < k; i++)
+    {
+        int &MAX = *max_element(m.begin(), m.end());
+        MAX *= 2;
+    }
+    int sum = 0;
+    rep(i, 3)
+    {
+        sum += m[i];
+    }
+    cout << sum << endl;
 }
