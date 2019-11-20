@@ -35,6 +35,7 @@ int ctoi(char c)
 int main()
 {
     int n;
+    cin >> n;
     int sum = 0;
     rep(i, n)
     {
