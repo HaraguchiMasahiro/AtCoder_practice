@@ -47,7 +47,7 @@ int main()
     {
         rep(j, 4)
         {
-            ans[3 - i][j] = vec[i][j];
+            ans[3 - i][3 - j] = vec[i][j];
         }
     }
     rep(i, 4)
