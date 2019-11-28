@@ -7,6 +7,8 @@
         "iostream": "cpp",
         "random": "cpp",
         "regex": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "chrono": "cpp",
+        "complex": "cpp"
     }
 }
