@@ -1,7 +1,9 @@
 #include <iostream>
 using namespace std;
+
 int main()
 {
-
-    cout << 5 << endl;
+    int i;
+    cin >> i;
+    cout << i * 2 + 1 << endl;
 }
