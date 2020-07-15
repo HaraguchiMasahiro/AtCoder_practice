@@ -62,12 +62,9 @@ int main()
     }
     for (int i = 0; i < m; i++)
     {
-      for (int j = 0; j < n; j++)
+      if ((s[sv[i]]) != cv[i] + '0') // '0'を足すと文字へ'0'を引くと数字へ
       {
-        if (j == sv[i] && (s[j] - '0') != cv[i])
-        {
-          ok = false;
-        }
+        ok = false;
       }
     }
     if (ok)
