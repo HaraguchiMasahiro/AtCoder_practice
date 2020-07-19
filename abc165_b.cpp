@@ -170,7 +170,7 @@ int main()
   int i;
   for (i = 0; yokin < x; i++)
   {
-    yokin *= 1.01;
+    yokin += yokin / 100;
   }
   cout << i << endl;
 
