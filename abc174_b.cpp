@@ -178,12 +178,13 @@ int main()
 {
   int n;
   cin >> n;
-  string s;
-  cin >> s;
+  double d;
+  cin >> d;
   ll ans = 0;
-  for (int i = 0; i < s.size() - 1; i++)
-  {
-    if(s[i]=='W'&&s[i+1]=='R'){
+  rep(i,n){
+    double x, y;
+    cin >> x >> y;
+    if(sqrt(x*x+y*y)<=d){
       ans++;
     }
   }

@@ -176,17 +176,12 @@ typedef long long ll;
 
 int main()
 {
-  int n;
-  cin >> n;
-  string s;
-  cin >> s;
-  ll ans = 0;
-  for (int i = 0; i < s.size() - 1; i++)
-  {
-    if(s[i]=='W'&&s[i+1]=='R'){
-      ans++;
-    }
+  int x;
+  cin >> x;
+  if(x>=30){
+    cout << "Yes" << endl;
+  }else{
+    cout << "No" << endl;
   }
-  cout << ans << endl;
   return 0;
 }

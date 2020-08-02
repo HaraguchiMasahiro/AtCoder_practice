@@ -176,17 +176,21 @@ typedef long long ll;
 
 int main()
 {
-  int n;
-  cin >> n;
-  string s;
-  cin >> s;
-  ll ans = 0;
-  for (int i = 0; i < s.size() - 1; i++)
-  {
-    if(s[i]=='W'&&s[i+1]=='R'){
-      ans++;
-    }
+  int k;
+  cin >> k;
+  if(k%2==0){
+    cout << -1 << endl;
+    return 0;
   }
-  cout << ans << endl;
+  ll s = 7;
+  for (ll i = 1;i<=k;i++){
+    if(s%k==0){
+      cout << i << endl;
+      return 0;
+    }
+    s = (s*10+7)%k;
+    //cout << s << endl;
+  }
+  cout << -1 << endl;
   return 0;
 }

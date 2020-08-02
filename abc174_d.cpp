@@ -181,10 +181,21 @@ int main()
   string s;
   cin >> s;
   ll ans = 0;
-  for (int i = 0; i < s.size() - 1; i++)
+  int left = 0;
+  int right = s.size() - 1;
+  while(left<right)
   {
-    if(s[i]=='W'&&s[i+1]=='R'){
+    if(s[left]=='W'&&s[right]=='R'){
       ans++;
+      left++;
+      right--;
+    }else if(s[left]=='W'&&s[right]=='W'){
+      right--;
+    }else if(s[left]=='R'&&s[right]=='R'){
+      left++;
+    }else{
+      left++;
+      right--;
     }
   }
   cout << ans << endl;
