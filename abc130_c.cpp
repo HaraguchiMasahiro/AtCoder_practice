@@ -17,24 +17,24 @@
 #include <limits>
 using namespace std;
 // 素因数分解
-vector<pair<long long, long long> > prime_factorize(long long n)
+vector<pair<long long, long long>> prime_factorize(long long n)
 {
-vector<pair<long long, long long> > res;
-for (long long p = 2; p * p <= n; ++p)
-{
-if (n % p != 0)
-continue;
-int num = 0;
-while (n % p == 0)
-{
-++num;
-n /= p;
-}
-res.push_back(make_pair(p, num));
-}
-if (n != 1)
-res.push_back(make_pair(n, 1));
-return res;
+  vector<pair<long long, long long>> res;
+  for (long long p = 2; p * p <= n; ++p)
+  {
+    if (n % p != 0)
+      continue;
+    int num = 0;
+    while (n % p == 0)
+    {
+      ++num;
+      n /= p;
+    }
+    res.push_back(make_pair(p, num));
+  }
+  if (n != 1)
+    res.push_back(make_pair(n, 1));
+  return res;
 }
 //modint
 template <int MOD>
@@ -155,13 +155,17 @@ struct BiCoef
   }
 };
 // 最大公倍数
-long long gcd(long long a, long long b) {
-    if (b==0) return a;
-    else return gcd(b, a%b);
+long long gcd(long long a, long long b)
+{
+  if (b == 0)
+    return a;
+  else
+    return gcd(b, a % b);
 }
 // 最小公倍数
-long long lcm(long long a, long long b) {
-    return a * b / gcd(a, b);
+long long lcm(long long a, long long b)
+{
+  return a * b / gcd(a, b);
 }
 const int MOD = 1000000007;
 using mint = Fp<MOD>;
@@ -175,12 +179,13 @@ int main()
 {
   ll W, H, x, y;
   cin >> W >> H >> x >> y;
-  double area = W * H / 2.0;
-  int center;
-  if(W/2==x&&H/2==y){
+  double area = double(W) * double(H) / 2;
+  int center = 0;
+  if (2 * x == W && y * 2 == H)
+  {
     center = 1;
   }
-  cout << fixed<<setprecision(10)<<area << " ";
+  cout <<fixed<<setprecision(6)<< area << " ";
   cout << center << endl;
   return 0;
 }

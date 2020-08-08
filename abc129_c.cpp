@@ -173,14 +173,27 @@ typedef long long ll;
 
 int main()
 {
-  ll W, H, x, y;
-  cin >> W >> H >> x >> y;
-  double area = W * H / 2.0;
-  int center;
-  if(W/2==x&&H/2==y){
-    center = 1;
+  int N, M;
+  cin >> N >> M;
+
+  vector<int> oks(N + 1, true);
+  rep(i,M){
+    int a;
+    cin >> a;
+    oks[a] = false;
   }
-  cout << fixed<<setprecision(10)<<area << " ";
-  cout << center << endl;
+
+  vector<ll> dp(N + 1);
+  dp[0] = 1;
+  for (int now = 0; now < N;now++){
+    for (int next = now + 1; next <= min(N, now + 2); next++)
+    {
+      if(oks[next]){
+        dp[next] += dp[now];
+        dp[next] %= MOD;
+      }
+    }
+  }
+  cout << dp[N] << endl;
   return 0;
 }
